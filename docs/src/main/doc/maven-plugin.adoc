@@ -1,0 +1,27 @@
+== Maven package plugin
+
+When using the https://github.com/atbashEE/runtime/blob/main/docs/src/main/doc/runner.adoc[Jakarta Runner solution], creating an executable JAR can be challenging since many files need proper handling so hat all components are still fully functional at runtime.
+
+For that reason, the Atbash Maven plugin is created to generate the executable jar.  Usage in your maven project file is
+
+[source, xml]
+----
+            <plugin>
+                <artifactId>atbash-runtime-maven-plugin</artifactId>
+                <groupId>be.atbash.runtime</groupId>
+                <version>1.0.0</version>
+                <executions>
+                    <execution>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>assemble</goal>
+                        </goals>
+                        <configuration>
+                            <mainClass>be.rubus.atbash.jwt.JWTApplication</mainClass>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+----
+
+The only configuration that it expects is the fully qualified name of the class with the `main`method.

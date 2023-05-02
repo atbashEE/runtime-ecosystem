@@ -1,0 +1,5 @@
+= Atbash Runtime Ecosystem
+
+Ecosystem projects for the https://github.com/atbashEE/runtime[Atbash Runtime]
+
+include::maven-plugin.adoc[]
